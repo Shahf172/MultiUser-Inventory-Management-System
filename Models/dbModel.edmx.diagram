@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="c01d21168228432a9215fa147a4fb0cd" Name="Diagram1" ZoomLevel="62">
+        <EntityTypeShape EntityType="TAJMAC99dbModel.adminSystem" Width="1.5" PointX="3" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="TAJMAC99dbModel.customer" Width="1.5" PointX="0.75" PointY="16.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="TAJMAC99dbModel.customersAdmin" Width="1.5" PointX="1.5" PointY="20.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TAJMAC99dbModel.customerSystem" Width="1.5" PointX="3" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="TAJMAC99dbModel.Log_In" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TAJMAC99dbModel.systemsDetail" Width="1.5" PointX="0.75" PointY="1.5" IsExpanded="true" />
+        <AssociationConnector Association="TAJMAC99dbModel.adminSystems_fk0" ManuallyRouted="false" />
+        <AssociationConnector Association="TAJMAC99dbModel.adminSystems_fk1" ManuallyRouted="false" />
+        <AssociationConnector Association="TAJMAC99dbModel.customer_fk0" ManuallyRouted="false" />
+        <AssociationConnector Association="TAJMAC99dbModel.customerSystem_fk0" ManuallyRouted="false" />
+        <AssociationConnector Association="TAJMAC99dbModel.customerSystem_fk1" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

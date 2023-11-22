@@ -1,0 +1,617 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="TAJMAC99dbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="adminSystems">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="adminId" Type="int" Nullable="false" />
+          <Property Name="sysId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="customer">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="firstName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="lastName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="userName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="designation" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="email" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="password" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="adminID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="customersAdmin">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="firstName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="lastName" Type="nvarchar" MaxLength="50" />
+          <Property Name="email" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="cellNo" Type="bigint" Nullable="false" />
+          <Property Name="phNo" Type="bigint" />
+          <Property Name="companyName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="userName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="password" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="designation" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="customerSystem">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="customerId" Type="int" Nullable="false" />
+          <Property Name="customerAccess" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="systemId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Log-In">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="userName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="password" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="systemsDetails">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="partType" Type="bigint" />
+          <Property Name="serial" Type="bigint" />
+          <Property Name="qrCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="qrImage" Type="image" />
+          <Property Name="pcNo" Type="int" />
+          <Property Name="dc_3v" Type="float" />
+          <Property Name="dc_5v" Type="float" />
+          <Property Name="dc_12v" Type="float" />
+          <Property Name="dc12v" Type="float" />
+          <Property Name="_12v" Type="float" />
+          <Property Name="SVSB" Type="nvarchar" MaxLength="50" />
+          <Property Name="PG" Type="nvarchar" MaxLength="50" />
+          <Property Name="service" Type="nvarchar" MaxLength="50" />
+          <Property Name="expressCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="mfgDate" Type="nvarchar" MaxLength="50" />
+          <Property Name="model" Type="nvarchar" MaxLength="50" />
+          <Property Name="noOfCpus" Type="nvarchar" MaxLength="50" />
+          <Property Name="codeName" Type="nvarchar" MaxLength="50" />
+          <Property Name="cache1_1" Type="nvarchar" MaxLength="50" />
+          <Property Name="cache1_2" Type="nvarchar" MaxLength="50" />
+          <Property Name="bootStages" Type="nvarchar" MaxLength="50" />
+          <Property Name="moboModel" Type="nvarchar" MaxLength="50" />
+          <Property Name="moboChipset" Type="nvarchar" MaxLength="50" />
+          <Property Name="biosVersion" Type="nvarchar" MaxLength="50" />
+          <Property Name="diskModel" Type="nvarchar" MaxLength="50" />
+          <Property Name="capacity" Type="nvarchar" MaxLength="50" />
+          <Property Name="diskSerial" Type="nvarchar" MaxLength="50" />
+          <Property Name="damageBlock" Type="nvarchar" MaxLength="50" />
+          <Property Name="maxTemp" Type="nvarchar" MaxLength="50" />
+          <Property Name="testedSpeed" Type="nvarchar" MaxLength="50" />
+          <Property Name="timeSpent" Type="nvarchar" MaxLength="50" />
+          <Property Name="tRateMin" Type="nvarchar" MaxLength="50" />
+          <Property Name="tRateMax" Type="nvarchar" MaxLength="50" />
+          <Property Name="tRateAvg" Type="nvarchar" MaxLength="50" />
+          <Property Name="accessTime" Type="nvarchar" MaxLength="50" />
+          <Property Name="burstRate" Type="nvarchar" MaxLength="50" />
+          <Property Name="cpuUsage" Type="nvarchar" MaxLength="50" />
+          <Property Name="diskwipe" Type="nvarchar" MaxLength="50" />
+          <Property Name="winMemDiag" Type="nvarchar" MaxLength="50" />
+          <Property Name="dimm1PartNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="dimm1SerialNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="dimm2PartNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="dimm2serialNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="dimm3PartNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="dimm3SerialNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="dimm4PartNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="dimm4SerialNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="modelNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="productId" Type="nvarchar" MaxLength="50" />
+          <Property Name="serialNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="mfg" Type="nvarchar" MaxLength="50" />
+          <Property Name="winReqId" Type="bigint" />
+          <Property Name="winCoaId" Type="bigint" />
+          <Property Name="winProduct" Type="nvarchar" MaxLength="50" />
+          <Property Name="winXCoaId" Type="bigint" />
+          <Property Name="winLicType" Type="nvarchar" MaxLength="50" />
+          <Property Name="winProdKey" Type="nvarchar" MaxLength="50" />
+          <Property Name="offReqId" Type="bigint" />
+          <Property Name="offCoaId" Type="bigint" />
+          <Property Name="offProd" Type="nvarchar" MaxLength="50" />
+          <Property Name="offXCoaId" Type="bigint" />
+          <Property Name="offLicType" Type="nvarchar" MaxLength="50" />
+          <Property Name="offProdKey" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <Association Name="adminSystems_fk0">
+          <End Role="customersAdmin" Type="Self.customersAdmin" Multiplicity="1" />
+          <End Role="adminSystems" Type="Self.adminSystems" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="customersAdmin">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="adminSystems">
+              <PropertyRef Name="adminId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="adminSystems_fk1">
+          <End Role="systemsDetails" Type="Self.systemsDetails" Multiplicity="1" />
+          <End Role="adminSystems" Type="Self.adminSystems" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="systemsDetails">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="adminSystems">
+              <PropertyRef Name="sysId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="customer_fk0">
+          <End Role="customersAdmin" Type="Self.customersAdmin" Multiplicity="1" />
+          <End Role="customer" Type="Self.customer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="customersAdmin">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="customer">
+              <PropertyRef Name="adminID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="customerSystem_fk0">
+          <End Role="customer" Type="Self.customer" Multiplicity="1" />
+          <End Role="customerSystem" Type="Self.customerSystem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="customer">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="customerSystem">
+              <PropertyRef Name="customerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="customerSystem_fk1">
+          <End Role="systemsDetails" Type="Self.systemsDetails" Multiplicity="1" />
+          <End Role="customerSystem" Type="Self.customerSystem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="systemsDetails">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="customerSystem">
+              <PropertyRef Name="systemId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="adminSysDetail" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="adminId" Type="int" Mode="In" />
+        </Function>
+        <EntityContainer Name="TAJMAC99dbModelStoreContainer">
+          <EntitySet Name="adminSystems" EntityType="Self.adminSystems" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="customer" EntityType="Self.customer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="customersAdmin" EntityType="Self.customersAdmin" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="customerSystem" EntityType="Self.customerSystem" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Log-In" EntityType="Self.Log-In" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="systemsDetails" EntityType="Self.systemsDetails" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="adminSystems_fk0" Association="Self.adminSystems_fk0">
+            <End Role="customersAdmin" EntitySet="customersAdmin" />
+            <End Role="adminSystems" EntitySet="adminSystems" />
+          </AssociationSet>
+          <AssociationSet Name="adminSystems_fk1" Association="Self.adminSystems_fk1">
+            <End Role="systemsDetails" EntitySet="systemsDetails" />
+            <End Role="adminSystems" EntitySet="adminSystems" />
+          </AssociationSet>
+          <AssociationSet Name="customer_fk0" Association="Self.customer_fk0">
+            <End Role="customersAdmin" EntitySet="customersAdmin" />
+            <End Role="customer" EntitySet="customer" />
+          </AssociationSet>
+          <AssociationSet Name="customerSystem_fk0" Association="Self.customerSystem_fk0">
+            <End Role="customer" EntitySet="customer" />
+            <End Role="customerSystem" EntitySet="customerSystem" />
+          </AssociationSet>
+          <AssociationSet Name="customerSystem_fk1" Association="Self.customerSystem_fk1">
+            <End Role="systemsDetails" EntitySet="systemsDetails" />
+            <End Role="customerSystem" EntitySet="customerSystem" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="TAJMAC99dbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="adminSystem">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="adminId" Type="Int32" Nullable="false" />
+          <Property Name="sysId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="customersAdmin" Relationship="Self.adminSystems_fk0" FromRole="adminSystems" ToRole="customersAdmin" />
+          <NavigationProperty Name="systemsDetail" Relationship="Self.adminSystems_fk1" FromRole="adminSystems" ToRole="systemsDetails" />
+        </EntityType>
+        <EntityType Name="customer">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="firstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="lastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="userName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="designation" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="adminID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="customersAdmin" Relationship="Self.customer_fk0" FromRole="customer" ToRole="customersAdmin" />
+          <NavigationProperty Name="customerSystems" Relationship="Self.customerSystem_fk0" FromRole="customer" ToRole="customerSystem" />
+        </EntityType>
+        <EntityType Name="customersAdmin">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="firstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="lastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="cellNo" Type="Int64" Nullable="false" />
+          <Property Name="phNo" Type="Int64" />
+          <Property Name="companyName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="userName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="designation" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="adminSystems" Relationship="Self.adminSystems_fk0" FromRole="customersAdmin" ToRole="adminSystems" />
+          <NavigationProperty Name="customers" Relationship="Self.customer_fk0" FromRole="customersAdmin" ToRole="customer" />
+        </EntityType>
+        <EntityType Name="customerSystem">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="customerId" Type="Int32" Nullable="false" />
+          <Property Name="customerAccess" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="systemId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="customer" Relationship="Self.customerSystem_fk0" FromRole="customerSystem" ToRole="customer" />
+          <NavigationProperty Name="systemsDetail" Relationship="Self.customerSystem_fk1" FromRole="customerSystem" ToRole="systemsDetails" />
+        </EntityType>
+        <EntityType Name="Log_In">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="userName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="systemsDetail">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="partType" Type="Int64" />
+          <Property Name="serial" Type="Int64" />
+          <Property Name="qrCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="qrImage" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="pcNo" Type="Int32" />
+          <Property Name="dc_3v" Type="Double" />
+          <Property Name="dc_5v" Type="Double" />
+          <Property Name="dc_12v" Type="Double" />
+          <Property Name="dc12v" Type="Double" />
+          <Property Name="C_12v" Type="Double" />
+          <Property Name="SVSB" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PG" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="service" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="expressCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="mfgDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="model" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="noOfCpus" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="codeName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="cache1_1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="cache1_2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="bootStages" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="moboModel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="moboChipset" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="biosVersion" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="diskModel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="capacity" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="diskSerial" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="damageBlock" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="maxTemp" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="testedSpeed" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="timeSpent" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="tRateMin" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="tRateMax" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="tRateAvg" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="accessTime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="burstRate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="cpuUsage" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="diskwipe" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="winMemDiag" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="dimm1PartNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="dimm1SerialNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="dimm2PartNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="dimm2serialNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="dimm3PartNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="dimm3SerialNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="dimm4PartNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="dimm4SerialNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="modelNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="productId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="serialNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="mfg" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="winReqId" Type="Int64" />
+          <Property Name="winCoaId" Type="Int64" />
+          <Property Name="winProduct" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="winXCoaId" Type="Int64" />
+          <Property Name="winLicType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="winProdKey" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="offReqId" Type="Int64" />
+          <Property Name="offCoaId" Type="Int64" />
+          <Property Name="offProd" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="offXCoaId" Type="Int64" />
+          <Property Name="offLicType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="offProdKey" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="adminSystems" Relationship="Self.adminSystems_fk1" FromRole="systemsDetails" ToRole="adminSystems" />
+          <NavigationProperty Name="customerSystems" Relationship="Self.customerSystem_fk1" FromRole="systemsDetails" ToRole="customerSystem" />
+        </EntityType>
+        <Association Name="adminSystems_fk0">
+          <End Role="customersAdmin" Type="Self.customersAdmin" Multiplicity="1" />
+          <End Role="adminSystems" Type="Self.adminSystem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="customersAdmin">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="adminSystems">
+              <PropertyRef Name="adminId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="adminSystems_fk1">
+          <End Role="systemsDetails" Type="Self.systemsDetail" Multiplicity="1" />
+          <End Role="adminSystems" Type="Self.adminSystem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="systemsDetails">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="adminSystems">
+              <PropertyRef Name="sysId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="customer_fk0">
+          <End Role="customersAdmin" Type="Self.customersAdmin" Multiplicity="1" />
+          <End Role="customer" Type="Self.customer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="customersAdmin">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="customer">
+              <PropertyRef Name="adminID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="customerSystem_fk0">
+          <End Role="customer" Type="Self.customer" Multiplicity="1" />
+          <End Role="customerSystem" Type="Self.customerSystem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="customer">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="customerSystem">
+              <PropertyRef Name="customerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="customerSystem_fk1">
+          <End Role="systemsDetails" Type="Self.systemsDetail" Multiplicity="1" />
+          <End Role="customerSystem" Type="Self.customerSystem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="systemsDetails">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="customerSystem">
+              <PropertyRef Name="systemId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="TAJMAC99dbEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="adminSystems" EntityType="Self.adminSystem" />
+          <EntitySet Name="customers" EntityType="Self.customer" />
+          <EntitySet Name="customersAdmins" EntityType="Self.customersAdmin" />
+          <EntitySet Name="customerSystems" EntityType="Self.customerSystem" />
+          <EntitySet Name="Log_In" EntityType="Self.Log_In" />
+          <EntitySet Name="systemsDetails" EntityType="Self.systemsDetail" />
+          <AssociationSet Name="adminSystems_fk0" Association="Self.adminSystems_fk0">
+            <End Role="customersAdmin" EntitySet="customersAdmins" />
+            <End Role="adminSystems" EntitySet="adminSystems" />
+          </AssociationSet>
+          <AssociationSet Name="adminSystems_fk1" Association="Self.adminSystems_fk1">
+            <End Role="systemsDetails" EntitySet="systemsDetails" />
+            <End Role="adminSystems" EntitySet="adminSystems" />
+          </AssociationSet>
+          <AssociationSet Name="customer_fk0" Association="Self.customer_fk0">
+            <End Role="customersAdmin" EntitySet="customersAdmins" />
+            <End Role="customer" EntitySet="customers" />
+          </AssociationSet>
+          <AssociationSet Name="customerSystem_fk0" Association="Self.customerSystem_fk0">
+            <End Role="customer" EntitySet="customers" />
+            <End Role="customerSystem" EntitySet="customerSystems" />
+          </AssociationSet>
+          <AssociationSet Name="customerSystem_fk1" Association="Self.customerSystem_fk1">
+            <End Role="systemsDetails" EntitySet="systemsDetails" />
+            <End Role="customerSystem" EntitySet="customerSystems" />
+          </AssociationSet>
+          <FunctionImport Name="adminSysDetail" ReturnType="Collection(TAJMAC99dbModel.adminSysDetail_Result)">
+            <Parameter Name="adminId" Mode="In" Type="Int32" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="adminSysDetail_Result">
+          <Property Type="Int32" Name="adminId" Nullable="false" />
+          <Property Type="Int32" Name="sysId" Nullable="false" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="TAJMAC99dbModelStoreContainer" CdmEntityContainer="TAJMAC99dbEntities">
+          <EntitySetMapping Name="adminSystems">
+            <EntityTypeMapping TypeName="TAJMAC99dbModel.adminSystem">
+              <MappingFragment StoreEntitySet="adminSystems">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="adminId" ColumnName="adminId" />
+                <ScalarProperty Name="sysId" ColumnName="sysId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="customers">
+            <EntityTypeMapping TypeName="TAJMAC99dbModel.customer">
+              <MappingFragment StoreEntitySet="customer">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="firstName" ColumnName="firstName" />
+                <ScalarProperty Name="lastName" ColumnName="lastName" />
+                <ScalarProperty Name="userName" ColumnName="userName" />
+                <ScalarProperty Name="designation" ColumnName="designation" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="adminID" ColumnName="adminID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="customersAdmins">
+            <EntityTypeMapping TypeName="TAJMAC99dbModel.customersAdmin">
+              <MappingFragment StoreEntitySet="customersAdmin">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="firstName" ColumnName="firstName" />
+                <ScalarProperty Name="lastName" ColumnName="lastName" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="cellNo" ColumnName="cellNo" />
+                <ScalarProperty Name="phNo" ColumnName="phNo" />
+                <ScalarProperty Name="companyName" ColumnName="companyName" />
+                <ScalarProperty Name="userName" ColumnName="userName" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="designation" ColumnName="designation" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="customerSystems">
+            <EntityTypeMapping TypeName="TAJMAC99dbModel.customerSystem">
+              <MappingFragment StoreEntitySet="customerSystem">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="customerId" ColumnName="customerId" />
+                <ScalarProperty Name="customerAccess" ColumnName="customerAccess" />
+                <ScalarProperty Name="systemId" ColumnName="systemId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Log_In">
+            <EntityTypeMapping TypeName="TAJMAC99dbModel.Log_In">
+              <MappingFragment StoreEntitySet="Log-In">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="userName" ColumnName="userName" />
+                <ScalarProperty Name="password" ColumnName="password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="systemsDetails">
+            <EntityTypeMapping TypeName="TAJMAC99dbModel.systemsDetail">
+              <MappingFragment StoreEntitySet="systemsDetails">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="partType" ColumnName="partType" />
+                <ScalarProperty Name="serial" ColumnName="serial" />
+                <ScalarProperty Name="qrCode" ColumnName="qrCode" />
+                <ScalarProperty Name="qrImage" ColumnName="qrImage" />
+                <ScalarProperty Name="pcNo" ColumnName="pcNo" />
+                <ScalarProperty Name="dc_3v" ColumnName="dc_3v" />
+                <ScalarProperty Name="dc_5v" ColumnName="dc_5v" />
+                <ScalarProperty Name="dc_12v" ColumnName="dc_12v" />
+                <ScalarProperty Name="dc12v" ColumnName="dc12v" />
+                <ScalarProperty Name="C_12v" ColumnName="_12v" />
+                <ScalarProperty Name="SVSB" ColumnName="SVSB" />
+                <ScalarProperty Name="PG" ColumnName="PG" />
+                <ScalarProperty Name="service" ColumnName="service" />
+                <ScalarProperty Name="expressCode" ColumnName="expressCode" />
+                <ScalarProperty Name="mfgDate" ColumnName="mfgDate" />
+                <ScalarProperty Name="model" ColumnName="model" />
+                <ScalarProperty Name="noOfCpus" ColumnName="noOfCpus" />
+                <ScalarProperty Name="codeName" ColumnName="codeName" />
+                <ScalarProperty Name="cache1_1" ColumnName="cache1_1" />
+                <ScalarProperty Name="cache1_2" ColumnName="cache1_2" />
+                <ScalarProperty Name="bootStages" ColumnName="bootStages" />
+                <ScalarProperty Name="moboModel" ColumnName="moboModel" />
+                <ScalarProperty Name="moboChipset" ColumnName="moboChipset" />
+                <ScalarProperty Name="biosVersion" ColumnName="biosVersion" />
+                <ScalarProperty Name="diskModel" ColumnName="diskModel" />
+                <ScalarProperty Name="capacity" ColumnName="capacity" />
+                <ScalarProperty Name="diskSerial" ColumnName="diskSerial" />
+                <ScalarProperty Name="damageBlock" ColumnName="damageBlock" />
+                <ScalarProperty Name="maxTemp" ColumnName="maxTemp" />
+                <ScalarProperty Name="testedSpeed" ColumnName="testedSpeed" />
+                <ScalarProperty Name="timeSpent" ColumnName="timeSpent" />
+                <ScalarProperty Name="tRateMin" ColumnName="tRateMin" />
+                <ScalarProperty Name="tRateMax" ColumnName="tRateMax" />
+                <ScalarProperty Name="tRateAvg" ColumnName="tRateAvg" />
+                <ScalarProperty Name="accessTime" ColumnName="accessTime" />
+                <ScalarProperty Name="burstRate" ColumnName="burstRate" />
+                <ScalarProperty Name="cpuUsage" ColumnName="cpuUsage" />
+                <ScalarProperty Name="diskwipe" ColumnName="diskwipe" />
+                <ScalarProperty Name="winMemDiag" ColumnName="winMemDiag" />
+                <ScalarProperty Name="dimm1PartNo" ColumnName="dimm1PartNo" />
+                <ScalarProperty Name="dimm1SerialNo" ColumnName="dimm1SerialNo" />
+                <ScalarProperty Name="dimm2PartNo" ColumnName="dimm2PartNo" />
+                <ScalarProperty Name="dimm2serialNo" ColumnName="dimm2serialNo" />
+                <ScalarProperty Name="dimm3PartNo" ColumnName="dimm3PartNo" />
+                <ScalarProperty Name="dimm3SerialNo" ColumnName="dimm3SerialNo" />
+                <ScalarProperty Name="dimm4PartNo" ColumnName="dimm4PartNo" />
+                <ScalarProperty Name="dimm4SerialNo" ColumnName="dimm4SerialNo" />
+                <ScalarProperty Name="modelNo" ColumnName="modelNo" />
+                <ScalarProperty Name="productId" ColumnName="productId" />
+                <ScalarProperty Name="serialNo" ColumnName="serialNo" />
+                <ScalarProperty Name="mfg" ColumnName="mfg" />
+                <ScalarProperty Name="winReqId" ColumnName="winReqId" />
+                <ScalarProperty Name="winCoaId" ColumnName="winCoaId" />
+                <ScalarProperty Name="winProduct" ColumnName="winProduct" />
+                <ScalarProperty Name="winXCoaId" ColumnName="winXCoaId" />
+                <ScalarProperty Name="winLicType" ColumnName="winLicType" />
+                <ScalarProperty Name="winProdKey" ColumnName="winProdKey" />
+                <ScalarProperty Name="offReqId" ColumnName="offReqId" />
+                <ScalarProperty Name="offCoaId" ColumnName="offCoaId" />
+                <ScalarProperty Name="offProd" ColumnName="offProd" />
+                <ScalarProperty Name="offXCoaId" ColumnName="offXCoaId" />
+                <ScalarProperty Name="offLicType" ColumnName="offLicType" />
+                <ScalarProperty Name="offProdKey" ColumnName="offProdKey" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="adminSysDetail" FunctionName="TAJMAC99dbModel.Store.adminSysDetail">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="TAJMAC99dbModel.adminSysDetail_Result">
+                <ScalarProperty Name="adminId" ColumnName="adminId" />
+                <ScalarProperty Name="sysId" ColumnName="sysId" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
